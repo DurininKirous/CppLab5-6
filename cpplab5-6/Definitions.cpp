@@ -80,6 +80,30 @@ void Vehicle::Print()
                << "Expenditure: " << Expenditure << std::endl;
 }
 
+void Vehicle::PrintPrice()
+{
+    std::cout << "Price: " << Price << std::endl;
+}
+
+void Vehicle::PrintName()
+{
+    std::cout << "Name: " << Owner << std::endl;
+}
+
+void Vehicle::PrintType()
+{
+    std::cout << "Type: " << TypeOfVehicle << std::endl;
+}
+
+void Vehicle::PrintFuelPrice()
+{
+    std::cout << "Fuel price: " << FuelPrice << std::endl;
+}
+
+void Vehicle::PrintExpenditure()
+{
+    std::cout << "Expenditure: " << Expenditure << std::endl;
+}
 int Vehicle::GetPrice() 
 {
     return Price;
@@ -93,6 +117,16 @@ int Vehicle::GetType()
 const char* Vehicle::GetName()
 {
     return Owner;
+}
+
+int Vehicle::GetFuelPrice()
+{
+    return FuelPrice;
+}
+
+int Vehicle::GetExpenditure()
+{
+    return Expenditure;
 }
 
 void Vehicle::SetPrice(int Price) 

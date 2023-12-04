@@ -18,7 +18,14 @@ public:
     void Print();
     int GetPrice();
     int GetType();
+    int GetFuelPrice();
+    int GetExpenditure();
     const char* GetName();
+    void PrintPrice();
+    void PrintType();
+    void PrintFuelPrice();
+    void PrintExpenditure();
+    void PrintName();
     void SetPrice(int Price);
     void SetName(const char* Owner);
     void SetFuelPrice(int FuelPrice);

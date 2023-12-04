@@ -68,6 +68,10 @@ int main()
 	Vehicle Third(1500, 2, "Arlin", 150, 100);
 	Vehicle Fourth;
 	Vehicle Fiveth(Third);
+	Second.SetName("Ivan");
+	Third.SetPrice(1700);
+	Fiveth.SetAllNewInformation(500, 3, "Logan", 150, 50);
+	First.PrintName();
 	Vehicle list[] = { First,Second,Third,Fourth,Fiveth };
 	CountVehiclesBelowTheSetValue(list, 5, 1300);
 	PercentageOfEachType(list, 5);
