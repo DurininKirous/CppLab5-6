@@ -68,6 +68,7 @@ int main()
 	Vehicle Third(1500, 2, "Arlin", 150, 100);
 	Vehicle Fourth;
 	Vehicle Fiveth(Third);
+	Fourth.Print();
 	Second.SetName("Ivan");
 	Third.SetPrice(1700);
 	Fiveth.SetAllNewInformation(500, 3, "Logan", 150, 50);

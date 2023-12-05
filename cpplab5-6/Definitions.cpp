@@ -6,13 +6,13 @@ Vehicle::Vehicle(int Price, int TypeOfVehicle, const char *Owner, int FuelPrice,
     FuelPrice(FuelPrice),
     Expenditure(Expenditure) 
 {
-    if (TypeOfVehicle <= 0 || TypeOfVehicle > 4)
+    if (TypeOfVehicle < 0 || TypeOfVehicle > 4)
     {
         std::cerr << "There is no such type of vehicle. Try again!";
-        while ((TypeOfVehicle <= 0 || TypeOfVehicle > 4))
+        while ((TypeOfVehicle < 0 || TypeOfVehicle > 4))
         {
             std::cin >> TypeOfVehicle;
-            if (TypeOfVehicle <= 0 || TypeOfVehicle > 4)
+            if (TypeOfVehicle < 0 || TypeOfVehicle > 4)
             {
                 std::cerr << "There is no such type of vehicle. Try again!";
             }
@@ -22,31 +22,7 @@ Vehicle::Vehicle(int Price, int TypeOfVehicle, const char *Owner, int FuelPrice,
     this->TypeOfVehicle = TypeOfVehicle;
 }
 
-Vehicle::Vehicle()
-{
-    std::cout << "Set the name of owner:"; char Name[128]; 
-    std::cin >> Name;
-    Name[strlen(Name) - 1] = '\0';
-    Owner = Name; 
-    std::cout << std::endl;
-    std::cout << "Set type of vehicle:"; std::cin >> TypeOfVehicle; std::cout << std::endl;
-    if (TypeOfVehicle<=0||TypeOfVehicle>4) 
-    {
-        std::cerr << "There is no such type of vehicle. Try again!";
-        while ((TypeOfVehicle <= 0 || TypeOfVehicle>4)) 
-        {
-            std::cin >> TypeOfVehicle;
-            if (TypeOfVehicle <= 0 || TypeOfVehicle>4)
-            {
-                std::cerr << "There is no such type of vehicle. Try again!";
-            }
-        }
-
-    }
-    std::cout << "Set price:"; std::cin >> Price; std::cout << std::endl;
-    std::cout << "Set the fuel price:"; std::cin >> FuelPrice; std::cout << std::endl;
-    std::cout << "Set the expenditure:"; std::cin >> Expenditure; std::cout << std::endl;
-}
+Vehicle::Vehicle(): Vehicle(0,0,"Unknown",0,0) {}
 
 Vehicle::Vehicle(const Vehicle& Other): 
     Price(Other.Price), 
@@ -62,6 +38,9 @@ void Vehicle::Print()
 {
     std::cout << "Owner: " << Owner << " ";
     switch (TypeOfVehicle) {
+    case 0:
+        std::cout << "Type of vehicle: Unknown ";
+        break;
     case 1:
         std::cout << "Type of vehicle: Automobile ";
         break;
